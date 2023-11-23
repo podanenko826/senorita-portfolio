@@ -1,16 +1,18 @@
-import { Disclosure} from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from 'next/image';
 
-import { TfiInstagram, TfiFacebook } from "react-icons/tfi";
+import { Disclosure } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+
+import { TfiInstagram, TfiFacebook } from 'react-icons/tfi';
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "About me", href: "/About", current: false },
-  { name: "Contact", href: "/Contact", current: false }
+  { name: 'Home', href: '/', current: true },
+  { name: 'About me', href: '/About', current: false },
+  { name: 'Contact', href: '/Contact', current: false },
 ];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 export default function NavBar() {
   return (
@@ -33,32 +35,36 @@ export default function NavBar() {
 
               <div className="flex flex-1 items-center justify-between sm:justify-between sm:h-24 sm:items-center">
                 <div className="flex flex-shrink-0 flex-1 items-center h-full justify-between bg-slate-100 lg:bg-white">
-                  <img
+                  <Image
                     className="block h-14 box-content p-2 px-3 my-2 w-auto  lg:hidden "
                     src="/logo.svg"
                     alt="Your Company"
+                    width={100}
+                    height={100}
                   />
-                  <img
+                  <Image
                     className="hidden h-20 w-auto lg:block "
                     src="/logo.svg"
                     alt="Your Company"
+                    width={100}
+                    height={100}
                   />
                   <div></div>
                 </div>
 
                 <div className="hidden sm:ml-6 sm:block ">
                   <div className="flex space-x-4">
-                    {navigation.map(item => (
+                    {navigation.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
                         className={classNames(
                           item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-slate-400 hover:bg-gray-500 hover:text-white",
-                          "px-3 py-2 rounded-md text-sm font-medium"
+                            ? 'bg-gray-900 text-white'
+                            : 'text-slate-400 hover:bg-gray-500 hover:text-white',
+                          'px-3 py-2 rounded-md text-sm font-medium'
                         )}
-                        aria-current={item.current ? "page" : undefined}
+                        aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
                       </a>
@@ -71,18 +77,18 @@ export default function NavBar() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 flex justify-center items-center flex-col items-stretch pt-2  text-center bg-slate-100 absolute w-full ">
-              {navigation.map(item => (
+              {navigation.map((item) => (
                 <Disclosure.Button
                   as="a"
                   key={item.name}
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-gray-800 text-white"
-                      : "text-gray-300 hover:bg-slate-600 hover:text-white",
-                    "block px-3 py-2 rounded-md text-slate-500 font-medium"
+                      ? 'bg-gray-800 text-white'
+                      : 'text-gray-300 hover:bg-slate-600 hover:text-white',
+                    'block px-3 py-2 rounded-md text-slate-500 font-medium'
                   )}
-                  aria-current={item.current ? "page" : undefined}
+                  aria-current={item.current ? 'page' : undefined}
                 >
                   {item.name}
                 </Disclosure.Button>

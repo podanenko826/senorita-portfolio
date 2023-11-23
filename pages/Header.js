@@ -1,4 +1,4 @@
-import { TfiInstagram, TfiFacebook } from "react-icons/tfi";
+import { TfiInstagram, TfiFacebook } from 'react-icons/tfi';
 
 export default function Header() {
   return (
@@ -18,7 +18,7 @@ export default function Header() {
             Anastasiia Yalovets <br />
             Photography
           </h1>
-          <p className="italic text-lg pt-2 normal-case ">
+          <p className="italic text-lg pt-2 normal-case">
             "A photograph is a secret about secret. The more it tells you the
             less you know"
           </p>
