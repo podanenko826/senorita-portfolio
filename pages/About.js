@@ -6,7 +6,7 @@ export default function About() {
     <>
       <div className="flex flex-col justify-center ">
         <div className="relative h-screen w-screen overflow-hidden">
-          <Image src={profilePic} fill className="object-contain" />
+          <Image src={profilePic} fill className="object-contain" alt="" />
         </div>
         <div className="bg-gray-100">hello</div>
       </div>

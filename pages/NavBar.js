@@ -76,7 +76,7 @@ export default function NavBar() {
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 flex justify-center items-center flex-col items-stretch pt-2  text-center bg-slate-100 absolute w-full ">
+            <div className="space-y-1 px-2 flex justify-center items-center flex-col pt-2  text-center bg-slate-100 absolute w-full ">
               {navigation.map((item) => (
                 <Disclosure.Button
                   as="a"
@@ -98,7 +98,7 @@ export default function NavBar() {
                   <TfiFacebook className="text-2xl fill-slate-600 border-black-2 hover:scale-125 hover:fill-slate-900 duration-150" />
                 </button>
                 <button>
-                  <TfiInstagram className="text-2xl fill-slate-600 border-black-2 hover:scale-125 duration-150 hover: fill-slate-900  " />
+                  <TfiInstagram className="text-2xl fill-slate-600 border-black-2 hover:scale-125 duration-150 hover:fill-slate-900  " />
                 </button>
               </div>
             </div>
