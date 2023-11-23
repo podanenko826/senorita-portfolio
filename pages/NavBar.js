@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -15,6 +18,8 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 export default function NavBar() {
+  const currentPath = usePathname();
+
   return (
     <Disclosure as="nav">
       {({ open }) => (
@@ -58,12 +63,17 @@ export default function NavBar() {
                       <a
                         key={item.name}
                         href={item.href}
-                        className={classNames(
-                          item.current
+                        className={`${
+                          currentPath === item.href
                             ? 'bg-gray-900 text-white'
-                            : 'text-slate-400 hover:bg-gray-500 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
-                        )}
+                            : 'text-slate-400 hover:bg-slate-400 hover:text-white'
+                        } px-3 py-2 text-sm font-medium`}
+                        // className={classNames(
+                        //   item.current
+                        //     ? 'bg-gray-900 text-white'
+                        //     : 'text-slate-400 hover:bg-gray-500 hover:text-white',
+                        //   'px-3 py-2 rounded-md text-sm font-medium'
+                        // )}
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}

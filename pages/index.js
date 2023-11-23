@@ -1,11 +1,11 @@
-import Head from "next/head";
-import { Inter } from "@next/font/google";
-import TabGroup from "../components/Tabs";
-import ImgService from "../services/imgService";
+import Head from 'next/head';
+import { Inter } from '@next/font/google';
+import TabGroup from '../components/Tabs';
+import ImgService from '../services/imgService';
 
+import Footer from './Footer';
 
-
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export default function Home({ mappedPhoto }) {
   return (
@@ -19,6 +19,7 @@ export default function Home({ mappedPhoto }) {
 
       <main className=" md:pt-[30px] ">
         <TabGroup photos={mappedPhoto} />
+        <Footer />
       </main>
     </div>
   );
@@ -30,7 +31,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      mappedPhoto: photos
-    }
+      mappedPhoto: photos,
+    },
   };
 }
