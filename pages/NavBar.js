@@ -40,21 +40,22 @@ export default function NavBar() {
 
               <div className="flex flex-1 items-center justify-between sm:justify-between sm:h-24 sm:items-center">
                 <div className="flex flex-shrink-0 flex-1 items-center h-full justify-around bg-navbar shadow-sm">
-                  <Image
-                    className="block h-14 box-content p-2 px-3 my-2 w-auto  lg:hidden "
-                    src="/logo.svg"
-                    alt="Your Company"
-                    width={100}
-                    height={100}
-                  />
-
-                  <Image
-                    className="hidden h-20 w-auto lg:block "
-                    src="/logo.svg"
-                    alt="Your Company"
-                    width={100}
-                    height={100}
-                  />
+                  <a href="/">
+                    <Image
+                      className="block h-14 box-content p-2 px-3 my-2 w-auto  lg:hidden "
+                      src="/logo.svg"
+                      alt="Your Company"
+                      width={100}
+                      height={100}
+                    />
+                    <Image
+                      className="hidden h-20 w-auto lg:block "
+                      src="/logo.svg"
+                      alt="Your Company"
+                      width={100}
+                      height={100}
+                    />
+                  </a>
 
                   <div className="hidden sm:ml-6 sm:block">
                     <div className="flex space-x-4">
