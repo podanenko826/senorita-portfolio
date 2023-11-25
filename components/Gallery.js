@@ -1,20 +1,20 @@
-import Masonry from "react-masonry-css";
-import Image from "next/image";
-import LightGallery from "lightgallery/react";
+import Masonry from 'react-masonry-css';
+import Image from 'next/image';
+import LightGallery from 'lightgallery/react';
 
 // Plugins
-import lgThumbnail from "lightgallery/plugins/thumbnail";
-import lgZoom from "lightgallery/plugins/zoom";
-import { useRef } from "react";
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgZoom from 'lightgallery/plugins/zoom';
+import { useRef } from 'react';
 // css style
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
-import "lightgallery/css/lg-thumbnail.css";
+import 'lightgallery/css/lightgallery.css';
+import 'lightgallery/css/lg-zoom.css';
+import 'lightgallery/css/lg-thumbnail.css';
 
 const breakpointColumnsObj = {
   default: 3,
   1100: 2,
-  700: 1
+  700: 1,
 };
 
 export default function Gallery({ allImages }) {
@@ -43,7 +43,7 @@ export default function Gallery({ allImages }) {
       </Masonry>
       {
         <LightGallery
-          onInit={ref => {
+          onInit={(ref) => {
             if (ref) {
               lightGallery.current = ref.instance;
             }
@@ -53,7 +53,7 @@ export default function Gallery({ allImages }) {
           dynamic
           dynamicEl={allImages.map(({ url }) => ({
             src: url,
-            thumb: url
+            thumb: url,
           }))}
         />
       }

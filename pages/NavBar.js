@@ -25,7 +25,7 @@ export default function NavBar() {
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div className="relative h-full flex  items-center justify-between ">
+            <div className="relative h-full flex items-center justify-between">
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-slate-500 hover:bg-gray-800 hover:text-white  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-200">
@@ -39,7 +39,7 @@ export default function NavBar() {
               </div>
 
               <div className="flex flex-1 items-center justify-between sm:justify-between sm:h-24 sm:items-center">
-                <div className="flex flex-shrink-0 flex-1 items-center h-full justify-between bg-slate-100 lg:bg-white">
+                <div className="flex flex-shrink-0 flex-1 items-center h-full justify-between">
                   <Image
                     className="block h-14 box-content p-2 px-3 my-2 w-auto  lg:hidden "
                     src="/logo.svg"
