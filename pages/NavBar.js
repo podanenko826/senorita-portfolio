@@ -24,7 +24,7 @@ export default function NavBar() {
     <Disclosure as="nav">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-full">
             <div className="relative h-full flex items-center justify-between">
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -39,7 +39,7 @@ export default function NavBar() {
               </div>
 
               <div className="flex flex-1 items-center justify-between sm:justify-between sm:h-24 sm:items-center">
-                <div className="flex flex-shrink-0 flex-1 items-center h-full justify-between">
+                <div className="flex flex-shrink-0 flex-1 items-center h-full justify-around bg-navbar shadow-sm">
                   <Image
                     className="block h-14 box-content p-2 px-3 my-2 w-auto  lg:hidden "
                     src="/logo.svg"
@@ -47,6 +47,7 @@ export default function NavBar() {
                     width={100}
                     height={100}
                   />
+
                   <Image
                     className="hidden h-20 w-auto lg:block "
                     src="/logo.svg"
@@ -54,31 +55,24 @@ export default function NavBar() {
                     width={100}
                     height={100}
                   />
-                  <div></div>
-                </div>
 
-                <div className="hidden sm:ml-6 sm:block ">
-                  <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={`${
-                          currentPath === item.href
-                            ? 'bg-gray-900 text-white'
-                            : 'text-slate-400 hover:bg-slate-400 hover:text-white'
-                        } px-3 py-2 text-sm font-medium`}
-                        // className={classNames(
-                        //   item.current
-                        //     ? 'bg-gray-900 text-white'
-                        //     : 'text-slate-400 hover:bg-gray-500 hover:text-white',
-                        //   'px-3 py-2 rounded-md text-sm font-medium'
-                        // )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
+                  <div className="hidden sm:ml-6 sm:block">
+                    <div className="flex space-x-4">
+                      {navigation.map((item) => (
+                        <a
+                          key={item.name}
+                          href={item.href}
+                          className={`${
+                            currentPath === item.href
+                              ? 'bg-gray-900 text-white'
+                              : 'text-slate-400 hover:bg-slate-400 hover:text-white'
+                          } px-3 py-2 text-sm font-medium`}
+                          aria-current={item.current ? 'page' : undefined}
+                        >
+                          {item.name}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
