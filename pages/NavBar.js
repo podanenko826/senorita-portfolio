@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { Disclosure } from '@headlessui/react';
@@ -9,9 +10,11 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { TfiInstagram, TfiFacebook } from 'react-icons/tfi';
 
 const navigation = [
-  { name: 'Home', href: '/', current: true },
-  { name: 'About me', href: '/About', current: false },
-  { name: 'Contact', href: '/Contact', current: false },
+  { name: 'News', href: '/' },
+  { name: 'Story', href: '/Story' },
+  { name: 'Filming', href: '/Filming' },
+  { name: 'About', href: '/About' },
+  { name: 'Contact', href: '/Contact' },
 ];
 
 function classNames(...classes) {
@@ -28,19 +31,22 @@ export default function NavBar() {
             <div className="relative h-full flex items-center justify-between">
               <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-slate-500 hover:bg-gray-800 hover:text-white  focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-200">
+                <Disclosure.Button className="inline-flex items-center justify-center p-0.5 mr-4 text-slate-500 active:bg-gray-800 active:text-white focus:outline-none focus:ring-2 focus:ring-inset">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
-                    <XMarkIcon className="block h-10 w-10" aria-hidden="true" />
+                    <XMarkIcon
+                      className="block h-11 w-11 bg-gray-300 p-"
+                      aria-hidden="true"
+                    />
                   ) : (
-                    <Bars3Icon className="block h-10 w-10" aria-hidden="true" />
+                    <Bars3Icon className="block h-11 w-11" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
               </div>
 
-              <div className="flex flex-1 items-center justify-between sm:justify-between sm:h-24 sm:items-center">
-                <div className="flex flex-shrink-0 flex-1 items-center h-full justify-around bg-navbar shadow-sm">
-                  <a href="/">
+              <div className="flex flex-1 items-center justify-between sm:justify-between sm:h-32 sm:items-center">
+                <div className="flex flex-shrink-0 flex-1 items-center h-full justify-center bg-navbar shadow-sm">
+                  <a className="focus:outline-none" href="/">
                     <Image
                       className="block h-14 box-content p-2 px-3 my-2 w-auto  lg:hidden "
                       src="/logo.svg"
@@ -65,9 +71,9 @@ export default function NavBar() {
                           href={item.href}
                           className={`${
                             currentPath === item.href
-                              ? 'bg-gray-900 text-white'
-                              : 'text-slate-400 hover:bg-slate-400 hover:text-white'
-                          } px-3 py-2 text-sm font-medium`}
+                              ? 'text-slate-900'
+                              : 'text-slate-400 hover:bg-slate-200 hover:text-slate-800'
+                          } px-3 py-2 text-base font-medium`}
                           aria-current={item.current ? 'page' : undefined}
                         >
                           {item.name}
@@ -75,24 +81,38 @@ export default function NavBar() {
                       ))}
                     </div>
                   </div>
+
+                  <div className="hidden lg:flex gap-2 justify-center items-center ml-8">
+                    <Link
+                      href="https://www.facebook.com/anastasia.nikolaevna.526"
+                      target="_blank"
+                    >
+                      <TfiFacebook className="text-3xl  border-black-2 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
+                    </Link>
+                    <Link
+                      href="https://www.instagram.com/senorita.photo/"
+                      target="_blank"
+                    >
+                      <TfiInstagram className="text-3xl hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 flex justify-center items-center flex-col pt-2  text-center bg-slate-100 absolute w-full ">
+            <div className="space-y-1 px-2 justify-center items-center flex-col pt-2 text-center bg-slate-100 absolute w-full ">
               {navigation.map((item) => (
                 <Disclosure.Button
                   as="a"
                   key={item.name}
                   href={item.href}
-                  className={classNames(
-                    item.current
-                      ? 'bg-gray-800 text-white'
-                      : 'text-gray-300 hover:bg-slate-600 hover:text-white',
-                    'block px-3 py-2 rounded-md text-slate-500 font-medium'
-                  )}
+                  className={`${
+                    currentPath === item.href
+                      ? 'bg-slate-600 text-white'
+                      : 'text-gray-300 hover:bg-slate-400 hover:text-white'
+                  } block px-3 py-2 rounded-md text-slate-500 font-medium`}
                   aria-current={item.current ? 'page' : undefined}
                 >
                   {item.name}
