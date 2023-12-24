@@ -7,14 +7,15 @@ import { usePathname } from 'next/navigation';
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
-import { TfiInstagram, TfiFacebook } from 'react-icons/tfi';
+// import { TfiInstagram, TfiFacebook } from 'react-icons/tfi';
+import { FaInstagram, FaInstagramSquare } from 'react-icons/fa6';
 
 const navigation = [
-  { name: 'News', href: '/' },
-  { name: 'Story', href: '/Story' },
-  { name: 'Filming', href: '/Filming' },
-  { name: 'About', href: '/About' },
-  { name: 'Contact', href: '/Contact' },
+  { label: 'News', href: '/' },
+  { label: 'Blog', href: '/Blog' },
+  { label: 'Story', href: '/Story' },
+  { label: 'About', href: '/About' },
+  { label: 'Contact', href: '/Contact' },
 ];
 
 function classNames(...classes) {
@@ -67,7 +68,7 @@ export default function NavBar() {
                     <div className="flex space-x-4">
                       {navigation.map((item) => (
                         <a
-                          key={item.name}
+                          key={item.label}
                           href={item.href}
                           className={`${
                             currentPath === item.href
@@ -76,24 +77,24 @@ export default function NavBar() {
                           } px-3 py-2 text-base font-medium`}
                           aria-current={item.current ? 'page' : undefined}
                         >
-                          {item.name}
+                          {item.label}
                         </a>
                       ))}
                     </div>
                   </div>
 
                   <div className="hidden lg:flex gap-2 justify-center items-center ml-8">
-                    <Link
+                    {/* <Link
                       href="https://www.facebook.com/anastasia.nikolaevna.526"
                       target="_blank"
                     >
                       <TfiFacebook className="text-3xl  border-black-2 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
-                    </Link>
+                    </Link> */}
                     <Link
                       href="https://www.instagram.com/senorita.photo/"
                       target="_blank"
                     >
-                      <TfiInstagram className="text-3xl hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
+                      <FaInstagram className="text-3xl hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
                     </Link>
                   </div>
                 </div>
@@ -106,7 +107,7 @@ export default function NavBar() {
               {navigation.map((item) => (
                 <Disclosure.Button
                   as="a"
-                  key={item.name}
+                  key={item.label}
                   href={item.href}
                   className={`${
                     currentPath === item.href
@@ -115,15 +116,15 @@ export default function NavBar() {
                   } block px-3 py-2 rounded-md text-slate-500 font-medium`}
                   aria-current={item.current ? 'page' : undefined}
                 >
-                  {item.name}
+                  {item.label}
                 </Disclosure.Button>
               ))}
-              <div className="flex w-full justify-center gap-2 py-4 border-y-2  lg:hidden ">
-                <button>
+              <div className="flex w-full justify-center gap-2 py-4 border-y-2 lg:hidden">
+                {/* <button>
                   <TfiFacebook className="text-2xl fill-slate-600 border-black-2 hover:scale-125 hover:fill-slate-900 duration-150" />
-                </button>
+                </button> */}
                 <button>
-                  <TfiInstagram className="text-2xl fill-slate-600 border-black-2 hover:scale-125 duration-150 hover:fill-slate-900  " />
+                  <FaInstagram className="text-2xl fill-slate-600 border-black-2 hover:scale-125 duration-150 hover:fill-slate-900" />
                 </button>
               </div>
             </div>
