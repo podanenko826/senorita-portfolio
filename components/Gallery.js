@@ -28,7 +28,7 @@ export default function Gallery({ allImages }) {
         {allImages.map((photo, idx) => (
           <Image
             src={photo.url}
-            className="pb-6"
+            className="pb-6 transition-transform duration-300 hover:scale-105"
             width={photo.width}
             height={photo.height}
             key={idx}
