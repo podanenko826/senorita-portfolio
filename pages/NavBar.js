@@ -11,10 +11,11 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { FaInstagram, FaInstagramSquare } from 'react-icons/fa6';
 
 const navigation = [
-  { label: 'News', href: '/' },
+  { label: 'Home', href: '/' },
   { label: 'Blog', href: '/Blog' },
   { label: 'Story', href: '/Story' },
   { label: 'About', href: '/About' },
+  { label: 'Gallery', href: '/Gallery' },
   { label: 'Contact', href: '/Contact' },
 ];
 
@@ -123,9 +124,9 @@ export default function NavBar() {
                 {/* <button>
                   <TfiFacebook className="text-2xl fill-slate-600 border-black-2 hover:scale-125 hover:fill-slate-900 duration-150" />
                 </button> */}
-                <button>
+                <Link href="https://www.instagram.com/senorita.photo/">
                   <FaInstagram className="text-2xl fill-slate-600 border-black-2 hover:scale-125 duration-150 hover:fill-slate-900" />
-                </button>
+                </Link>
               </div>
             </div>
           </Disclosure.Panel>

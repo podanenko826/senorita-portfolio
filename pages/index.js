@@ -18,7 +18,7 @@ export default function Home({ mappedPhoto }) {
       </Head>
 
       <main className=" md:pt-[30px] ">
-        <TabGroup photos={mappedPhoto} />
+        <TabGroup photos={mappedPhoto} key="Photo-1" />
         <Footer />
       </main>
     </div>
