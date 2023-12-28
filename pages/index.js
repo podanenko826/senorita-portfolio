@@ -3,7 +3,7 @@ import { Inter } from '@next/font/google';
 import TabGroup from '../components/Tabs';
 import ImgService from '../services/imgService';
 
-import Footer from './Footer';
+import Journal from './Journal';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,8 +18,8 @@ export default function Home({ mappedPhoto }) {
       </Head>
 
       <main className=" md:pt-[30px] ">
+        <Journal />
         <TabGroup photos={mappedPhoto} key="Photo-1" />
-        <Footer />
       </main>
     </div>
   );

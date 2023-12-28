@@ -4,7 +4,7 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 const Footer = () => {
   return (
     <div className="flex min-w-full justify-center pb-3">
-      <h3 className="font-mono">@2023 Made with</h3>
+      <h3 className="font-mono">@2024 Made with</h3>
 
       <IoMdHeartEmpty className="text-red-500 ml-1.5 mr-1.5 text-xl mt-0.5" />
 

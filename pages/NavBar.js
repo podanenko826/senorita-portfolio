@@ -12,10 +12,9 @@ import { FaInstagram, FaInstagramSquare } from 'react-icons/fa6';
 
 const navigation = [
   { label: 'Home', href: '/' },
-  { label: 'Blog', href: '/Blog' },
-  { label: 'Story', href: '/Story' },
-  { label: 'About', href: '/About' },
   { label: 'Gallery', href: '/Gallery' },
+  { label: 'Pricing', href: '/Pricing' },
+  { label: 'About', href: '/About' },
   { label: 'Contact', href: '/Contact' },
 ];
 
@@ -73,9 +72,9 @@ export default function NavBar() {
                           href={item.href}
                           className={`${
                             currentPath === item.href
-                              ? 'text-slate-900'
-                              : 'text-slate-400 hover:bg-slate-200 hover:text-slate-800'
-                          } px-3 py-2 text-base font-medium`}
+                              ? 'text-blue-500'
+                              : 'hover:bg-slate-200 hover:text-slate-800'
+                          } px-3 py-2 text-slate-900 text-base font-mono`}
                           aria-current={item.current ? 'page' : undefined}
                         >
                           {item.label}

@@ -11,6 +11,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-syne)', ...fontFamily.sans],
         courier: ['Courier New', 'Courier', 'monospace'],
+        times: ['Times New Roman'],
       },
       backgroundImage: {
         navbar:

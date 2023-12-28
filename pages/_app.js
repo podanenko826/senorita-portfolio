@@ -1,12 +1,13 @@
-import "../styles/globals.css";
-import { Syne } from "@next/font/google";
+import '../styles/globals.css';
+import { Syne } from '@next/font/google';
 
-import NavBar from "./NavBar";
-import Header from "./Header";
+import NavBar from './NavBar';
+import Header from './Header';
+import Footer from './Footer';
 
 const syne = Syne({
-  subsets: ["latin"],
-  variable: "--font-syne"
+  subsets: ['latin'],
+  variable: '--font-syne',
 });
 
 export default function App({ Component, pageProps }) {
@@ -15,6 +16,7 @@ export default function App({ Component, pageProps }) {
       <NavBar />
       <Header />
       <Component {...pageProps} />
+      <Footer />
     </div>
   );
 }
