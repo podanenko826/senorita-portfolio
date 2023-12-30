@@ -1,18 +1,37 @@
 export default function Journal() {
   return (
     <div className="min-w-full pl-8 pr-8 flex gap-4">
-      <div className="w-3/4 h-96 bg-gray-50">
-        <h1 className="text-4xl font-times text-center p-4 mt-8">
+      <div className="flex flex-col min-w-full xl:px-72 mb-6 items-between ">
+        <p className="text-6xl text-center font-semibold border-b-4 border-black p-10">
+          NEWS
+        </p>
+        <h1 className="text-3xl md:text-4xl font-times text-center md:p-8 mt-8 mb-12 md:mb-4">
           &ldquo;Discover the attractiveness and power of female form through
           the lens of my camera&rdquo;
         </h1>
-        <h1 className="leading-5 font-serif pl-6">
-          <strong className="text-4xl font-normal">G</strong>reetings! I'm
-          Senorita, a passionate photographer dedicated to freezing moments in
-          time and turning them into everlasting memories. With a keen eye for
-          detail and a love for storytelling. My goal is to not just take
-          pictures but to craft visual stories that resonate with emotion and
-          authenticity.
+        <h1 className="leading-5 text-sm font-courier pl-6 text-left">
+          <strong className="text-3xl font-semibold">Y</strong>ou'll embark on a
+          journey through time, emotion, and the wonders of our world. <br />
+          This is not just a photography portfolio; it's a window into moments,
+          dreams, and the beauty that surrounds us. Let the images tell their
+          stories, as you explore the visual symphony that awaits. Join me on
+          this voyage, and together, we'll create visual magic one click at a
+          time. <br /> <br />
+        </h1>
+        <h1 className="leading-5 text-sm font-courier pl-6 text-left">
+          <strong className="text-3xl font-semibold">E</strong>xplore moments,
+          emotions, and the beauty of our world. Join me on this visual journey,
+          and let the images speak. <br /> <br />
+        </h1>
+        <h1 className="leading-5 text-sm font-courier pl-6 text-left hidden md:block">
+          <strong className="text-3xl font-semibold">S</strong>tep into a realm
+          where images speak louder than words, where every frame holds a story
+          waiting to be discovered. This is a sanctuary for visual storytellers,
+          a place where the world is seen through the lens of creativity. Join
+          me on a voyage through light, color, and emotions, as we explore the
+          artistry of photography. The moments frozen in time are waiting to
+          take you on a visual adventure. Welcome to my photography portfolio,
+          where every click unlocks a new chapter in the narrative of life.{' '}
         </h1>
       </div>
       <div className="w-3/4 h-96 bg-transparent"></div>

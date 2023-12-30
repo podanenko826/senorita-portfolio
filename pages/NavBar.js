@@ -8,7 +8,7 @@ import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 // import { TfiInstagram, TfiFacebook } from 'react-icons/tfi';
-import { FaInstagram, FaInstagramSquare } from 'react-icons/fa6';
+import { FaInstagram, FaFacebookF } from 'react-icons/fa6';
 
 const navigation = [
   { label: 'Home', href: '/' },
@@ -95,6 +95,12 @@ export default function NavBar() {
                       target="_blank"
                     >
                       <FaInstagram className="text-3xl hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
+                    </Link>
+                    <Link
+                      href="https://www.facebook.com/anastasia.nikolaevna.526"
+                      target="_blank"
+                    >
+                      <FaFacebookF className="text-3xl hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
                     </Link>
                   </div>
                 </div>

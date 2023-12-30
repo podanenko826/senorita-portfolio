@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <div>
-      <div className=" flex flex-col bg-slate-000 py-4  border-stone-400 py_-9">
+      <div className=" flex flex-col bg-slate-000 py-6  border-stone-400 py_-9">
         {/* <div className="px-8 flex flex-col justify-center items-center lg:flex-row lg:pr-16 ">
                     <CiFacebook className="text-4xl hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"/>
                     <button className='hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'><CiInstagram className="text-4xl" /></button>

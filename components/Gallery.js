@@ -22,7 +22,7 @@ export default function Gallery({ allImages }) {
   return (
     <div>
       <Masonry
-        className="flex w-auto gap-2 px-8 lg:px-64 md:px-20 sm:px-14"
+        className="flex w-auto gap-2 px-2 lg:px-64 md:px-20 sm:px-14"
         breakpointCols={breakpointColumnsObj}
       >
         {allImages.map((photo, idx) => (

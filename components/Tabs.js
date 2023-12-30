@@ -14,7 +14,7 @@ export default function TabGroup({ photos }) {
   const buttonLabel = showMore ? 'Show More >' : 'Show Less <';
   const fullGallery = 'Full Gallery >';
 
-  const buttonKey = showMore ? 'Photo-3' : 'Photo-2';
+  const buttonKey = showMore ? 'Photo-1' : 'Photo-2';
 
   const currentPath = usePathname();
 
@@ -30,7 +30,7 @@ export default function TabGroup({ photos }) {
           <Tab.List className="pt-4">
             <Tab className="p-auto mb-14 uppercase text-xl" key={buttonKey}>
               <span
-                className="border-b-2 text-blue-600 border-blue-600"
+                className="border-b-2 text-blue-500 border-blue-500"
                 onClick={toggleShowMore}
               >
                 {buttonLabel}
@@ -46,13 +46,13 @@ export default function TabGroup({ photos }) {
           </Tab.Panels>
           <div className="flex flex-col items-center w-full pt-0 ">
             <div className="flex min-w-full justify-center">
-              <h1 className="text-6xl p-14 font-courier text-center">
+              <h1 className="text-6xl py-14 font-courier text-center">
                 More Examples?
               </h1>
             </div>
 
             <a className="pt-4 mb-20" href="/Gallery">
-              <span className="text-blue-500 font-thin p-auto uppercase text-xl">
+              <span className="text-blue-500 border-b-2 border-blue-500 font-thin p-auto uppercase text-xl">
                 {fullGallery}
               </span>
             </a>
