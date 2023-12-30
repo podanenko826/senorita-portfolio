@@ -12,9 +12,9 @@ import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lg-thumbnail.css';
 
 const breakpointColumnsObj = {
-  default: 3,
-  1100: 2,
-  700: 1,
+  default: 4,
+  1100: 4,
+  700: 3,
 };
 
 export default function Gallery({ allImages }) {
@@ -22,13 +22,13 @@ export default function Gallery({ allImages }) {
   return (
     <div>
       <Masonry
-        className="flex w-auto gap-12 px-4 "
+        className="flex w-auto gap-2 px-8 lg:px-64 md:px-20 sm:px-14"
         breakpointCols={breakpointColumnsObj}
       >
         {allImages.map((photo, idx) => (
           <Image
             src={photo.url}
-            className="pb-6 transition-transform duration-300 hover:scale-105"
+            className="pb-2 transition-transform duration-300 hover:scale-105"
             width={photo.width}
             height={photo.height}
             key={idx}

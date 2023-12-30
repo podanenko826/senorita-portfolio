@@ -14,7 +14,7 @@ export default function TabGroup({ photos }) {
   const buttonLabel = showMore ? 'Show More >' : 'Show Less <';
   const fullGallery = 'Full Gallery >';
 
-  const buttonKey = showMore ? 'Photo-1' : 'Photo-2';
+  const buttonKey = showMore ? 'Photo-3' : 'Photo-2';
 
   const currentPath = usePathname();
 
@@ -22,15 +22,15 @@ export default function TabGroup({ photos }) {
     return (
       <div className="flex flex-col items-center w-full pt-0 ">
         <div className="flex min-w-full justify-center">
-          <h1 className="text-6xl p-14 font-courier text-center">
+          <h1 className="text-6xl p-14 mt-6 font-courier text-center">
             Recent Work
           </h1>
         </div>
         <Tab.Group>
           <Tab.List className="pt-4">
-            <Tab className="p-auto mr-3 uppercase text-xl" key={buttonKey}>
+            <Tab className="p-auto mb-14 uppercase text-xl" key={buttonKey}>
               <span
-                className="ml-8 border-b-2 text-blue-600 border-blue-600"
+                className="border-b-2 text-blue-600 border-blue-600"
                 onClick={toggleShowMore}
               >
                 {buttonLabel}
@@ -38,7 +38,7 @@ export default function TabGroup({ photos }) {
             </Tab>
           </Tab.List>
           <Tab.Panels className="h-full max-w-[1500px] w-full p-3 my-6">
-            <Tab.Panel key={buttonKey}>
+            <Tab.Panel key={'Photo-2'}>
               <Gallery
                 allImages={photos.filter((photo) => photo.folder === buttonKey)}
               />
@@ -47,12 +47,12 @@ export default function TabGroup({ photos }) {
           <div className="flex flex-col items-center w-full pt-0 ">
             <div className="flex min-w-full justify-center">
               <h1 className="text-6xl p-14 font-courier text-center">
-                More Examples
+                More Examples?
               </h1>
             </div>
 
-            <a className=" pt-4 mb-20" href="/Gallery">
-              <span className="ml-8 text-blue-600 border-b-2 border-blue-600 p-auto mr-3 uppercase text-xl">
+            <a className="pt-4 mb-20" href="/Gallery">
+              <span className="text-blue-500 font-thin p-auto uppercase text-xl">
                 {fullGallery}
               </span>
             </a>

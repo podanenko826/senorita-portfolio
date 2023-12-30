@@ -72,9 +72,9 @@ export default function NavBar() {
                           href={item.href}
                           className={`${
                             currentPath === item.href
-                              ? 'text-blue-500'
-                              : 'hover:bg-slate-200 hover:text-slate-800'
-                          } px-3 py-2 text-slate-900 text-base font-mono`}
+                              ? 'text-slate-900'
+                              : 'hover:bg-slate-200 text-slate-500 hover:text-slate-700'
+                          } px-3 py-2 text-base font-mono`}
                           aria-current={item.current ? 'page' : undefined}
                         >
                           {item.label}
