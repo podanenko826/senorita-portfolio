@@ -1,7 +1,7 @@
 export default function Journal() {
   return (
-    <div className="min-w-full pl-8 pr-8 flex gap-4">
-      <div className="flex flex-col min-w-full xl:px-72 mb-6 items-between ">
+    <div className="min-w-full px-8 flex gap-4 overflow-hidden py-8 bg-slate-50">
+      <div className="flex flex-col min-w-full xl:px-72 mb-6 items-between">
         <p className="text-6xl text-center font-semibold border-b-4 border-black p-10">
           NEWS
         </p>

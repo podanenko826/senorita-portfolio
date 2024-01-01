@@ -1,6 +1,7 @@
 import Masonry from 'react-masonry-css';
 import Image from 'next/image';
 import LightGallery from 'lightgallery/react';
+import Like from './Like';
 
 // Plugins
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
@@ -26,19 +27,22 @@ export default function Gallery({ allImages }) {
         breakpointCols={breakpointColumnsObj}
       >
         {allImages.map((photo, idx) => (
-          <Image
-            src={photo.url}
-            className="pb-2 transition-transform duration-300 hover:scale-105"
-            width={photo.width}
-            height={photo.height}
-            key={idx}
-            alt="photo"
-            placeholder="blur"
-            blurDataURL={photo.dataUrl}
-            onClick={() => {
-              lightGallery.current.openGallery(idx);
-            }}
-          />
+          <div className="hover:scale-105 duration-300">
+            <Like />
+            <Image
+              src={photo.url}
+              className="pb-2"
+              width={photo.width}
+              height={photo.height}
+              key={idx}
+              alt="photo"
+              placeholder="blur"
+              blurDataURL={photo.dataUrl}
+              onClick={() => {
+                lightGallery.current.openGallery(idx);
+              }}
+            />
+          </div>
         ))}
       </Masonry>
       {
