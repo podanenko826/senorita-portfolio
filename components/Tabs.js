@@ -30,7 +30,7 @@ export default function TabGroup({ photos }) {
           <Tab.List className="pt-4">
             <Tab className="p-auto mb-14 uppercase text-xl" key={buttonKey}>
               <span
-                className="border-b-2 text-blue-500 border-blue-500"
+                className="border-b-2 text-blue-500 border-blue-500 hover:-tracking-[-6px] duration-300"
                 onClick={toggleShowMore}
               >
                 {buttonLabel}
@@ -38,7 +38,7 @@ export default function TabGroup({ photos }) {
             </Tab>
           </Tab.List>
           <Tab.Panels className="h-full max-w-[1500px] w-full p-3 my-6">
-            <Tab.Panel key={'Photo-2'}>
+            <Tab.Panel key={buttonKey}>
               <Gallery
                 allImages={photos.filter((photo) => photo.folder === buttonKey)}
               />
@@ -52,10 +52,19 @@ export default function TabGroup({ photos }) {
             </div>
 
             <a className="pt-4 mb-20" href="/Gallery">
-              <span className="text-blue-500 border-b-2 border-blue-500 font-thin p-auto uppercase text-xl">
+              <span className="text-blue-500 border-b-2 border-blue-500 font-thin p-auto uppercase text-xl hover:-tracking-[-6px] duration-300">
                 {fullGallery}
               </span>
             </a>
+            <Tab.Panels className="h-full max-w-[1500px] w-full p-3 my-6">
+              <Tab.Panel key={'Photo-2'}>
+                <Gallery
+                  allImages={photos.filter(
+                    (photo) => photo.folder === buttonKey
+                  )}
+                />
+              </Tab.Panel>
+            </Tab.Panels>
           </div>
         </Tab.Group>
       </div>

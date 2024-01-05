@@ -6,7 +6,7 @@ import Like from './Like';
 // Plugins
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 // css style
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';

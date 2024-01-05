@@ -10,15 +10,19 @@ const Like = () => {
   return (
     <>
       {isLiked === false ? (
-        <IoMdHeartEmpty
-          onClick={handleLikeClick}
-          className="text-3xl text-zinc-300 absolute mt-72 ml-[110px] hover:text-zinc-200 hover:scale-110 duration-200"
-        />
+        <a>
+          <IoMdHeartEmpty
+            onClick={handleLikeClick}
+            className="text-2xl text-zinc-300 z-50 absolute ml-[110px] hover:text-zinc-200 hover:scale-110 duration-200 cursor-pointer hover:outline-none"
+          />
+        </a>
       ) : (
-        <IoMdHeart
-          onClick={handleLikeClick}
-          className="text-3xl text-red-500 absolute mt-72 ml-[110px] hover:scale-110 duration-200"
-        />
+        <a>
+          <IoMdHeart
+            onClick={handleLikeClick}
+            className="text-2xl text-red-500 z-50 absolute ml-[110px] hover:scale-110 duration-200 cursor-pointer hover:outline-none"
+          />
+        </a>
       )}
     </>
   );
