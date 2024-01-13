@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next';
 
 import { usePathname } from 'next/navigation';
 
-export async function getServerSideProps({ locale }) {
+export async function getStaticProps({ locale }) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
