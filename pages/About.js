@@ -1,8 +1,21 @@
 import Image from 'next/image';
 import Head from 'next/head';
+
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 // import profilePic from '../public/senorita.png';
 
+export async function getServerSideProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
+
 export default function About() {
+  const { t } = useTranslation();
+
   return (
     <>
       <Head>

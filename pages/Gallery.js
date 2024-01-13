@@ -1,7 +1,21 @@
 import TabGroup from './Tabs';
 import ImgService from '../services/imgService';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
-export default function Gallery({ mappedPhoto }) {
+export async function getServerSideProps({ locale }) {
+  const imgService = new ImgService();
+  const photos = await imgService.getCachePhotos();
+
+  return {
+    props: {
+      mappedPhoto: photos,
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
+
+export default function Gallery({ mappedPhoto, locale }) {
   return (
     <div className="h-full ">
       <main className=" md:pt-[30px] ">
@@ -9,15 +23,4 @@ export default function Gallery({ mappedPhoto }) {
       </main>
     </div>
   );
-}
-
-export async function getServerSideProps() {
-  const imgService = new ImgService();
-  const photos = await imgService.getCachePhotos();
-
-  return {
-    props: {
-      mappedPhoto: photos,
-    },
-  };
 }

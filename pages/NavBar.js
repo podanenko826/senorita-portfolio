@@ -28,12 +28,12 @@ export async function getServerSideProps({ locale }) {
 export default function NavBar({ locale }) {
   const { t } = useTranslation();
 
-  // const navigation = [
-  //   { id: 1, key: 'home', href: '/' },
-  //   { id: 2, key: 'gallery', href: '/Gallery' },
-  //   { id: 3, key: 'aboutme', href: '/About' },
-  //   { id: 4, key: 'contact', href: '/Contact' },
-  // ];
+  const navigation = [
+    { id: 1, key: 'home', href: '/' },
+    { id: 2, key: 'gallery', href: '/Gallery' },
+    { id: 3, key: 'aboutme', href: '/About' },
+    { id: 4, key: 'contact', href: '/Contact' },
+  ];
 
   const currentPath = usePathname();
 
@@ -170,19 +170,54 @@ export default function NavBar({ locale }) {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 justify-center items-center flex-col pt-2 text-center bg-slate-100 absolute w-full ">
-              {/* {navigation.map((item) => (
-                <Disclosure.Button
-                  as="a"
-                  key={item.id}
-                  href={item.href}
-                  className={`${
-                    currentPath === item.href
-                      ? 'bg-slate-600 text-white'
-                      : 'text-gray-300 hover:bg-slate-400 hover:text-white'
-                  } block px-3 py-2 rounded-md text-slate-500 font-medium`}
-                  aria-current={item.current ? 'page' : undefined}
-                ></Disclosure.Button>
-              ))} */}
+              <Disclosure.Button
+                as="a"
+                href={'/'}
+                className={`${
+                  currentPath === '/'
+                    ? 'bg-slate-600 text-white'
+                    : 'text-gray-300 hover:bg-slate-400 hover:text-white'
+                } block px-3 py-2 rounded-md text-slate-500 font-medium`}
+                // aria-current={item.current ? 'page' : undefined}
+              >
+                {t('home')}
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href={'/Gallery'}
+                className={`${
+                  currentPath === '/Gallery'
+                    ? 'bg-slate-600 text-white'
+                    : 'text-gray-300 hover:bg-slate-400 hover:text-white'
+                } block px-3 py-2 rounded-md text-slate-500 font-medium`}
+                // aria-current={item.current ? 'page' : undefined}
+              >
+                {t('gallery')}
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href={'/About'}
+                className={`${
+                  currentPath === '/About'
+                    ? 'bg-slate-600 text-white'
+                    : 'text-gray-300 hover:bg-slate-400 hover:text-white'
+                } block px-3 py-2 rounded-md text-slate-500 font-medium`}
+                // aria-current={item.current ? 'page' : undefined}
+              >
+                {t('aboutme')}
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href={'/Contact'}
+                className={`${
+                  currentPath === '/Contact'
+                    ? 'bg-slate-600 text-white'
+                    : 'text-gray-300 hover:bg-slate-400 hover:text-white'
+                } block px-3 py-2 rounded-md text-slate-500 font-medium`}
+                // aria-current={item.current ? 'page' : undefined}
+              >
+                {t('contact')}
+              </Disclosure.Button>
               <div className="flex w-full justify-center gap-2 py-4 border-y-2 lg:hidden">
                 {/* <button>
                   <TfiFacebook className="text-2xl fill-slate-600 border-black-2 hover:scale-125 hover:fill-slate-900 duration-150" />
