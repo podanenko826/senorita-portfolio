@@ -3,7 +3,20 @@ import Link from 'next/link';
 
 import { FaInstagram, FaFacebookF } from 'react-icons/fa6';
 
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+
+export async function getServerSideProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
+
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="flex min-w-full justify-center align-middle pb-3 mt-20">
@@ -34,8 +47,7 @@ const Footer = () => {
       </div>
       <div className="flex min-w-full justify-center pb-3">
         <h3 className="font-courier text-slate-600 text-xs md:text-sm p-7 text-center">
-          Copyright @ 2024 Anastasia Yalovets | All Rights Reserved | Lviv |
-          Ukraine
+          {t('copyright')}
         </h3>
 
         {/* <a

@@ -1,4 +1,4 @@
-import TabGroup from '../components/Tabs';
+import TabGroup from './Tabs';
 import ImgService from '../services/imgService';
 
 export default function Gallery({ mappedPhoto }) {

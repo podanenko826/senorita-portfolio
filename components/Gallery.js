@@ -2,6 +2,7 @@ import Masonry from 'react-masonry-css';
 import Image from 'next/image';
 import LightGallery from 'lightgallery/react';
 import Like from './Like';
+import Head from 'next/head';
 
 // Plugins
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
@@ -21,17 +22,24 @@ const breakpointColumnsObj = {
 export default function Gallery({ allImages }) {
   let lightGallery = useRef(null);
   return (
-    <div>
+    <>
+      <Head>
+        <title>SENORITA PHOTOGRAPHY</title>
+        <meta name="description" content="Anastasiia Yalovets Photography" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <Masonry
-        className="flex w-auto gap-2 px-2 lg:px-64 md:px-20 sm:px-14"
+        className="flex w-auto gap-2 px-2 lg:px-64 md:px-20 sm:px-14 relative"
         breakpointCols={breakpointColumnsObj}
       >
         {allImages.map((photo, idx) => (
-          <div className="hover:scale-105 duration-300">
-            <Like />
+          <div className="overflow-hidden mb-2">
+            {/* <Like /> */}
             <Image
               src={photo.url}
-              className="pb-2"
+              className="transition-transform ease-in-out duration-500 hover:scale-125 hover:cursor-pointer hover:opacity-95"
               width={photo.width}
               height={photo.height}
               key={idx}
@@ -59,8 +67,11 @@ export default function Gallery({ allImages }) {
             src: url,
             thumb: url,
           }))}
+          download={false}
+          mousewheel={true}
+          mobileSettings
         />
       }
-    </div>
+    </>
   );
 }

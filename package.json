@@ -22,6 +22,7 @@
     "lightgallery": "^2.7.0",
     "lqip-modern": "^2.0.0",
     "next": "^13.5.6",
+    "next-i18next": "^15.2.0",
     "node-cache": "^5.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -35,5 +36,10 @@
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4"
+  },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
   }
 }

@@ -1,16 +1,19 @@
 import '../styles/globals.css';
 import { Syne } from '@next/font/google';
+import { appWithTranslation } from 'next-i18next';
 
 import NavBar from './NavBar';
 import Header from './Header';
 import Footer from './Footer';
+
+import { useState } from 'react';
 
 const syne = Syne({
   subsets: ['latin'],
   variable: '--font-syne',
 });
 
-export default function App({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <div className={`${syne.variable} font-sans`}>
       <NavBar />
@@ -20,3 +23,5 @@ export default function App({ Component, pageProps }) {
     </div>
   );
 }
+
+export default appWithTranslation(App);

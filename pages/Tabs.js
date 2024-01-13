@@ -1,18 +1,30 @@
 import { useState } from 'react';
 import { Tab } from '@headlessui/react';
-import Gallery from './Gallery';
+import Gallery from '../components/Gallery';
+
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 import { usePathname } from 'next/navigation';
 
-export default function TabGroup({ photos }) {
+export async function getServerSideProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
+
+export default function TabGroup({ photos, locale }) {
+  const { t } = useTranslation();
+
   const [showMore, setShowMore] = useState(true);
 
   const toggleShowMore = () => {
     setShowMore((prevShowMore) => !prevShowMore);
   };
 
-  const buttonLabel = showMore ? 'Show More >' : 'Show Less <';
-  const fullGallery = 'Full Gallery >';
+  const buttonLabel = showMore ? t('showmore') : t('showless');
 
   const buttonKey = showMore ? 'Photo-1' : 'Photo-2';
 
@@ -23,14 +35,14 @@ export default function TabGroup({ photos }) {
       <div className="flex flex-col items-center w-full pt-0 ">
         <div className="flex min-w-full justify-center">
           <h1 className="text-6xl p-14 mt-6 font-courier text-center">
-            Recent Work
+            {t('recentwork')}
           </h1>
         </div>
         <Tab.Group>
           <Tab.List className="pt-4">
             <Tab className="p-auto mb-14 uppercase text-xl" key={buttonKey}>
               <span
-                className="border-b-2 text-blue-500 border-blue-500 hover:-tracking-[-6px] duration-300"
+                className="border-b-2 text-blue-500 border-blue-500 active:text-indigo-300 active:border-indigo-300 tracking-wider hover:-tracking-[-8px] hover:text-[19px] duration-300"
                 onClick={toggleShowMore}
               >
                 {buttonLabel}
@@ -47,17 +59,17 @@ export default function TabGroup({ photos }) {
           <div className="flex flex-col items-center w-full pt-0 ">
             <div className="flex min-w-full justify-center">
               <h1 className="text-6xl py-14 font-courier text-center">
-                More Examples?
+                {t('moreexamples')}
               </h1>
             </div>
 
             <a className="pt-4 mb-20" href="/Gallery">
-              <span className="text-blue-500 border-b-2 border-blue-500 font-thin p-auto uppercase text-xl hover:-tracking-[-6px] duration-300">
-                {fullGallery}
+              <span className="text-blue-500 border-b-2 border-blue-500 active:text-indigo-300 active:border-indigo-300 font-thin p-auto uppercase text-xl tracking-wider hover:-tracking-[-8px] hover:text-[19px] duration-300">
+                {t('fullgallery')}
               </span>
             </a>
             <Tab.Panels className="h-full max-w-[1500px] w-full p-3 my-6">
-              <Tab.Panel key={'Photo-2'}>
+              <Tab.Panel key={buttonKey}>
                 <Gallery
                   allImages={photos.filter(
                     (photo) => photo.folder === buttonKey
