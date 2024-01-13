@@ -35,7 +35,7 @@ export default function Gallery({ allImages }) {
         breakpointCols={breakpointColumnsObj}
       >
         {allImages.map((photo, idx) => (
-          <div className="overflow-hidden mb-2">
+          <div key={idx} className="overflow-hidden mb-2">
             {/* <Like /> */}
             <Image
               src={photo.url}
