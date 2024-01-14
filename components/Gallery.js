@@ -67,6 +67,7 @@ export default function Gallery({ allImages }) {
             src: url,
             thumb: url,
           }))}
+          licenseKey="1111-1111-111-1111"
           download={false}
           mousewheel={true}
           mobileSettings

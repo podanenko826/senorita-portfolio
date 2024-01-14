@@ -17,7 +17,7 @@ const inter = Inter({ subsets: ['latin'] });
 //     },
 //   };
 // }
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ locale }) {
   const imgService = new ImgService();
   const photos = await imgService.getCachePhotos();
 
@@ -40,7 +40,6 @@ export default function Home({ mappedPhoto, locale }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {console.log(locale)}
 
       <main className=" md:pt-[30px] ">
         <Journal />

@@ -16,6 +16,8 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function Gallery({ mappedPhoto, locale }) {
+  const { t } = useTranslation();
+
   return (
     <div className="h-full ">
       <main className=" md:pt-[30px] ">

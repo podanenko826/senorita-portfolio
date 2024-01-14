@@ -24,7 +24,7 @@ export default function TabGroup({ photos, locale }) {
     setShowMore((prevShowMore) => !prevShowMore);
   };
 
-  const buttonLabel = showMore ? t('showmore') : t('showless');
+  const buttonLabel = showMore ? t('Show More >') : t('Show Less <');
 
   const buttonKey = showMore ? 'Photo-1' : 'Photo-2';
 
@@ -35,7 +35,7 @@ export default function TabGroup({ photos, locale }) {
       <div className="flex flex-col items-center w-full pt-0 ">
         <div className="flex min-w-full justify-center">
           <h1 className="text-6xl p-14 mt-6 font-courier text-center">
-            {t('recentwork')}
+            {t('Recent Work')}
           </h1>
         </div>
         <Tab.Group>
@@ -59,13 +59,13 @@ export default function TabGroup({ photos, locale }) {
           <div className="flex flex-col items-center w-full pt-0 ">
             <div className="flex min-w-full justify-center">
               <h1 className="text-6xl py-14 font-courier text-center">
-                {t('moreexamples')}
+                {t('More Examples?')}
               </h1>
             </div>
 
             <a className="pt-4 mb-20" href="/Gallery">
               <span className="text-blue-500 border-b-2 border-blue-500 active:text-indigo-300 active:border-indigo-300 font-thin p-auto uppercase text-xl tracking-wider hover:-tracking-[-8px] hover:text-[19px] duration-300">
-                {t('fullgallery')}
+                {t('Gallery >')}
               </span>
             </a>
             <Tab.Panels className="h-full max-w-[1500px] w-full p-3 my-6">
@@ -86,7 +86,7 @@ export default function TabGroup({ photos, locale }) {
       <div className="flex flex-col items-center w-full pt-0 ">
         <div className="flex min-w-full justify-center">
           <h1 className="text-6xl p-14 font-courier text-center">
-            {t('boldgallery')}
+            {t('_Gallery')}
           </h1>
         </div>
         <Tab.Group>

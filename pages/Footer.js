@@ -36,18 +36,12 @@ const Footer = () => {
         >
           <FaInstagram className="text-3xl hover:bg-gray-700 duration-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
         </Link>
-
-        <Link
-          href="https://www.facebook.com/anastasia.nikolaevna.526"
-          target="_blank"
-          className="mt-7 ml-3"
-        >
-          <FaFacebookF className="text-3xl hover:bg-gray-700 duration-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
-        </Link>
       </div>
       <div className="flex min-w-full justify-center pb-3">
         <h3 className="font-courier text-slate-600 text-xs md:text-sm p-7 text-center">
-          {t('copyright')}
+          {t(
+            'Copyright @ 2024 Anastasia Yalovets | All Rights Reserved | Lviv | Ukraine'
+          )}
         </h3>
 
         {/* <a

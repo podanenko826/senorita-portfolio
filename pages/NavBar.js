@@ -12,7 +12,8 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { IoEarth } from 'react-icons/io5';
 
 // import { TfiInstagram, TfiFacebook } from 'react-icons/tfi';
-import { FaInstagram, FaFacebookF } from 'react-icons/fa6';
+import { FaInstagram } from 'react-icons/fa6';
+import { useRouter } from 'next/router';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -25,15 +26,16 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default function NavBar({ locale }) {
+export default function NavBar(props) {
+  // const navigation = [
+  //   { id: 1, key: 'home', href: '/' },
+  //   { id: 2, key: 'gallery', href: '/Gallery' },
+  //   { id: 3, key: 'aboutme', href: '/About' },
+  //   { id: 4, key: 'contact', href: '/Contact' },
+  // ];
   const { t } = useTranslation();
 
-  const navigation = [
-    { id: 1, key: 'home', href: '/' },
-    { id: 2, key: 'gallery', href: '/Gallery' },
-    { id: 3, key: 'aboutme', href: '/About' },
-    { id: 4, key: 'contact', href: '/Contact' },
-  ];
+  const router = useRouter();
 
   const currentPath = usePathname();
 
@@ -93,52 +95,51 @@ export default function NavBar({ locale }) {
                           {getTranslations(item.key)}
                         </a>
                       ))} */}
-
                       <a
-                        href={'/'}
+                        href={`/${router.locale}`}
                         className={`${
-                          currentPath === '/'
+                          currentPath === '/' ||
+                          currentPath === `/${router.locale}`
                             ? 'text-slate-900'
                             : 'text-slate-500 hover:text-slate-800 duration-200'
                         } px-3 py-2 text-lg font-courier`}
-                        // aria-current={item.current ? 'page' : undefined}
                       >
-                        {t('home')}
+                        {t('Home')}
                       </a>
 
                       <a
-                        href={'/Gallery'}
+                        href={`/${router.locale}/Gallery`}
                         className={`${
-                          currentPath === '/Gallery'
+                          currentPath === '/Gallery' ||
+                          currentPath === `/${router.locale}/Gallery`
                             ? 'text-slate-900'
                             : 'text-slate-500 hover:text-slate-800 duration-200'
                         } px-3 py-2 text-lg font-courier`}
-                        // aria-current={item.current ? 'page' : undefined}
                       >
-                        {t('gallery')}
+                        {t('Gallery')}
                       </a>
 
                       <a
-                        href={'/About'}
+                        href={`/${router.locale}/About`}
                         className={`${
-                          currentPath === '/About'
+                          currentPath === '/About' ||
+                          currentPath === `/${router.locale}/About`
                             ? 'text-slate-900'
                             : 'text-slate-500 hover:text-slate-800 duration-200'
                         } px-3 py-2 text-lg font-courier`}
-                        // aria-current={item.current ? 'page' : undefined}
                       >
-                        {t('aboutme')}
+                        {t('About Me')}
                       </a>
                       <a
-                        href={'/Contact'}
+                        href={`/${router.locale}/Contact`}
                         className={`${
-                          currentPath === '/Contact'
+                          currentPath === '/Contact' ||
+                          currentPath === `/${router.locale}/Contact`
                             ? 'text-slate-900'
                             : 'text-slate-500 hover:text-slate-800 duration-200'
                         } px-3 py-2 text-lg font-courier`}
-                        // aria-current={item.current ? 'page' : undefined}
                       >
-                        {t('contact')}
+                        {t('Contact')}
                       </a>
                     </div>
                   </div>
@@ -156,12 +157,6 @@ export default function NavBar({ locale }) {
                     >
                       <FaInstagram className="text-3xl hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
                     </Link>
-                    <Link
-                      href="https://www.facebook.com/anastasia.nikolaevna.526"
-                      target="_blank"
-                    >
-                      <FaFacebookF className="text-3xl hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
-                    </Link>
                   </div>
                 </div>
               </div>
@@ -172,56 +167,49 @@ export default function NavBar({ locale }) {
             <div className="space-y-1 px-2 justify-center items-center flex-col pt-2 text-center bg-slate-100 absolute w-full ">
               <Disclosure.Button
                 as="a"
-                href={'/'}
+                href={`/${router.locale}`}
                 className={`${
-                  currentPath === '/'
+                  currentPath === '/' || currentPath === '/uk'
                     ? 'bg-slate-600 text-white'
                     : 'text-gray-300 hover:bg-slate-400 hover:text-white'
                 } block px-3 py-2 rounded-md text-slate-500 font-medium`}
-                // aria-current={item.current ? 'page' : undefined}
               >
-                {t('home')}
+                {t('Home')}
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href={'/Gallery'}
+                href={`/${router.locale}/Gallery`}
                 className={`${
-                  currentPath === '/Gallery'
+                  currentPath === '/Gallery' || currentPath === '/uk/Gallery'
                     ? 'bg-slate-600 text-white'
                     : 'text-gray-300 hover:bg-slate-400 hover:text-white'
                 } block px-3 py-2 rounded-md text-slate-500 font-medium`}
-                // aria-current={item.current ? 'page' : undefined}
               >
-                {t('gallery')}
+                {t('Gallery')}
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href={'/About'}
+                href={`/${router.locale}/About`}
                 className={`${
                   currentPath === '/About'
                     ? 'bg-slate-600 text-white'
                     : 'text-gray-300 hover:bg-slate-400 hover:text-white'
                 } block px-3 py-2 rounded-md text-slate-500 font-medium`}
-                // aria-current={item.current ? 'page' : undefined}
               >
-                {t('aboutme')}
+                {t('About Me')}
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href={'/Contact'}
+                href={`/${router.locale}/Contact`}
                 className={`${
                   currentPath === '/Contact'
                     ? 'bg-slate-600 text-white'
                     : 'text-gray-300 hover:bg-slate-400 hover:text-white'
                 } block px-3 py-2 rounded-md text-slate-500 font-medium`}
-                // aria-current={item.current ? 'page' : undefined}
               >
-                {t('contact')}
+                {t('Contact')}
               </Disclosure.Button>
               <div className="flex w-full justify-center gap-2 py-4 border-y-2 lg:hidden">
-                {/* <button>
-                  <TfiFacebook className="text-2xl fill-slate-600 border-black-2 hover:scale-125 hover:fill-slate-900 duration-150" />
-                </button> */}
                 <Link href="https://www.instagram.com/senorita.photo/">
                   <FaInstagram className="text-2xl fill-slate-600 border-black-2 hover:scale-125 duration-150 hover:fill-slate-900" />
                 </Link>
