@@ -17,7 +17,7 @@ const inter = Inter({ subsets: ['latin'] });
 //     },
 //   };
 // }
-export async function getServerSideProps({ locale }) {
+export async function getStaticProps({ locale }) {
   const imgService = new ImgService();
   const photos = await imgService.getCachePhotos();
 
