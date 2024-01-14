@@ -25,9 +25,7 @@ export default function Header(locale) {
           <TfiInstagram className="text-3xl hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
         </div> */}
         <div className="flex-auto px-6 justify-center uppercase text-center leading-normal tracking-wider">
-          <h1 className="lg:text-3xl">
-            {t('Anastasiia Yalovets Photography')}
-          </h1>
+          <h1>{t('Anastasiia Yalovets Photography')}</h1>
           <p className="italic text-base pt-2 normal-case">
             &ldquo;
             {t(

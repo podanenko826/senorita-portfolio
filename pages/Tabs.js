@@ -86,7 +86,7 @@ export default function TabGroup({ photos, locale }) {
       <div className="flex flex-col items-center w-full pt-0 ">
         <div className="flex min-w-full justify-center">
           <h1 className="text-6xl p-14 font-courier text-center">
-            {t('_Gallery')}
+            {t('Gallery')}
           </h1>
         </div>
         <Tab.Group>

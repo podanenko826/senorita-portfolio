@@ -62,16 +62,19 @@ export default function NavBar(props) {
 
               <div className="flex flex-1 items-center justify-start sm:justify-between sm:h-32 sm:items-center">
                 <div className="flex px-4 flex-shrink-0 flex-1 items-center h-full sm:justify-center justify-start bg-navbar shadow-sm">
-                  <a className="focus:outline-none" href="/">
+                  <a
+                    className="focus:outline-none hover:scale-110 duration-300"
+                    href={`/${router.locale}`}
+                  >
                     <Image
-                      className="block h-14 box-content p-2 px-3 my-2 w-auto  lg:hidden "
+                      className="block h-14 box-content p-2 px-3 my-2 w-auto lg:hidden"
                       src="/logo.svg"
                       alt="Your Company"
                       width={100}
                       height={100}
                     />
                     <Image
-                      className="hidden h-20 w-auto lg:block "
+                      className="hidden h-20 w-auto lg:block"
                       src="/logo.svg"
                       alt="Your Company"
                       width={100}

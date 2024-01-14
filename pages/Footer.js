@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { FaInstagram, FaFacebookF } from 'react-icons/fa6';
 
@@ -17,10 +18,12 @@ export async function getStaticProps({ locale }) {
 const Footer = () => {
   const { t } = useTranslation();
 
+  const router = useRouter();
+
   return (
     <>
       <div className="flex min-w-full justify-center align-middle pb-3 mt-20">
-        <a className="focus:outline-none" href="/">
+        <a className="focus:outline-none" href={`/${router.locale}`}>
           <Image
             className="block h-14 box-content p-2 px-3 my-2 w-auto hover:scale-125 duration-300 "
             src="/logo.svg"
