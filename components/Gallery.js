@@ -119,13 +119,13 @@ export default function Gallery({ allImages }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="px-4">
+      <div className="px-1 md:px-2 lg:px-4">
         <Masonry
-          className="flex w-full gap-4 mt-4"
+          className="flex w-full gap-2 md:gap-4 mt-2 md:mt-4"
           breakpointCols={breakpointColumnsObj}
         >
           {allImages.map((photo, idx) => (
-            <div key={idx} className="overflow-hidden mb-4">
+            <div key={idx} className="overflow-hidden mb-2 md:mb-4">
               <Image
                 src={photo.url}
                 className="transition-transform ease-in-out duration-500 hover:scale-125 hover:cursor-pointer hover:opacity-95"
