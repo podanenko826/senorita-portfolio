@@ -97,7 +97,7 @@ export default function Gallery({ allImages }) {
 
   const breakpointColumnsObj = {
     default: 3,
-    1100: 4,
+    1100: 3,
     700: 2,
   };
 
@@ -119,7 +119,7 @@ export default function Gallery({ allImages }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="px-4 md:px-20 sm:px-14">
+      <div className="px-4">
         <Masonry
           className="flex w-full gap-4 mt-4"
           breakpointCols={breakpointColumnsObj}

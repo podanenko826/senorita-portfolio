@@ -50,12 +50,6 @@ export default function NavBar(props) {
   const toggleLocale = () => {
     const newLocale = locale === 'en' ? 'uk' : 'en';
     setLocale(newLocale);
-    console.log(locale);
-
-    // router.push(
-    //   `/${locale}`,
-    //   router.asPath.replace(`/${locale}`, `/${newLocale}`)
-    // );
   };
   return (
     <Disclosure as="nav">
@@ -131,7 +125,7 @@ export default function NavBar(props) {
                       onClick={toggleLocale}
                       href={`/${locale}${router.asPath}`}
                     >
-                      <IoEarth className="text-2xl hover:cursor-pointer hover:rotate-180 duration-500" />
+                      <IoEarth className="text-[27px] hover:cursor-pointer hover:rotate-180 duration-500" />
                     </a>
 
                     <Link
@@ -167,6 +161,10 @@ export default function NavBar(props) {
                 <Link href="https://www.instagram.com/senorita.photo/">
                   <FaInstagram className="text-2xl fill-slate-600 border-black-2 hover:scale-125 duration-150 hover:fill-slate-900" />
                 </Link>
+
+                <a onClick={toggleLocale} href={`/${locale}${router.asPath}`}>
+                  <IoEarth className="text-[24px] fill-slate-600 hover:rotate-180 duration-500" />
+                </a>
               </div>
             </div>
           </Disclosure.Panel>

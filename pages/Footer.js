@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 
 import { FaInstagram, FaFacebookF } from 'react-icons/fa6';
+import { IoEarth } from 'react-icons/io5';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -19,6 +21,17 @@ const Footer = () => {
   const { t } = useTranslation();
 
   const router = useRouter();
+
+  const [locale, setLocale] = useState(router.locale);
+
+  useEffect(() => {
+    setLocale(router.locale);
+  }, [router.locale]);
+
+  const toggleLocale = () => {
+    const newLocale = locale === 'en' ? 'uk' : 'en';
+    setLocale(newLocale);
+  };
 
   return (
     <>
@@ -39,6 +52,10 @@ const Footer = () => {
         >
           <FaInstagram className="text-3xl hover:bg-gray-700 duration-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
         </Link>
+
+        <a onClick={toggleLocale} href={`/${locale}${router.asPath}`}>
+          <IoEarth className="text-[30px] ml-3 mt-7 hover:cursor-pointer hover:rotate-180 duration-500" />
+        </a>
       </div>
       <div className="flex min-w-full justify-center pb-3">
         <h3 className="font-courier text-slate-600 text-xs md:text-sm p-7 text-center">
