@@ -6,6 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 
 export async function getServerSideProps({ locale }) {
   return {
@@ -30,7 +31,9 @@ export default function TabGroup({ photos, locale }) {
 
   const currentPath = usePathname();
 
-  if (currentPath === '/') {
+  const router = useRouter();
+
+  if (currentPath === '/' || currentPath === `/${router.locale}`) {
     return (
       <div className="flex flex-col items-center w-full pt-0 ">
         <div className="flex min-w-full justify-center">

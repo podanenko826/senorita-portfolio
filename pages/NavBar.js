@@ -27,12 +27,13 @@ export async function getStaticProps({ locale }) {
 }
 
 export default function NavBar(props) {
-  // const navigation = [
-  //   { id: 1, key: 'home', href: '/' },
-  //   { id: 2, key: 'gallery', href: '/Gallery' },
-  //   { id: 3, key: 'aboutme', href: '/About' },
-  //   { id: 4, key: 'contact', href: '/Contact' },
-  // ];
+  const navigation = [
+    { id: 1, key: 'Home', href: '/' },
+    { id: 2, key: 'Gallery', href: '/Gallery' },
+    { id: 3, key: 'About Me', href: '/About' },
+    { id: 4, key: 'Contact', href: '/Contact' },
+  ];
+
   const { t } = useTranslation();
 
   const router = useRouter();
@@ -84,66 +85,21 @@ export default function NavBar(props) {
 
                   <div className="hidden sm:ml-6 sm:block">
                     <div className="flex space-x-4">
-                      {/* {navigation.map((item) => (
+                      {navigation.map((item) => (
                         <a
                           key={item.id}
-                          href={item.href}
+                          href={`/${router.locale}${item.href}`}
                           className={`${
-                            currentPath === item.href
+                            currentPath === item.href ||
+                            currentPath === `/${router.locale}${currentPath}`
                               ? 'text-slate-900'
                               : 'text-slate-500 hover:text-slate-800 duration-200'
                           } px-3 py-2 text-lg font-courier`}
                           aria-current={item.current ? 'page' : undefined}
                         >
-                          {getTranslations(item.key)}
+                          {t(item.key)}
                         </a>
-                      ))} */}
-                      <a
-                        href={`/${router.locale}`}
-                        className={`${
-                          currentPath === '/' ||
-                          currentPath === `/${router.locale}`
-                            ? 'text-slate-900'
-                            : 'text-slate-500 hover:text-slate-800 duration-200'
-                        } px-3 py-2 text-lg font-courier`}
-                      >
-                        {t('Home')}
-                      </a>
-
-                      <a
-                        href={`/${router.locale}/Gallery`}
-                        className={`${
-                          currentPath === '/Gallery' ||
-                          currentPath === `/${router.locale}/Gallery`
-                            ? 'text-slate-900'
-                            : 'text-slate-500 hover:text-slate-800 duration-200'
-                        } px-3 py-2 text-lg font-courier`}
-                      >
-                        {t('Gallery')}
-                      </a>
-
-                      <a
-                        href={`/${router.locale}/About`}
-                        className={`${
-                          currentPath === '/About' ||
-                          currentPath === `/${router.locale}/About`
-                            ? 'text-slate-900'
-                            : 'text-slate-500 hover:text-slate-800 duration-200'
-                        } px-3 py-2 text-lg font-courier`}
-                      >
-                        {t('About Me')}
-                      </a>
-                      <a
-                        href={`/${router.locale}/Contact`}
-                        className={`${
-                          currentPath === '/Contact' ||
-                          currentPath === `/${router.locale}/Contact`
-                            ? 'text-slate-900'
-                            : 'text-slate-500 hover:text-slate-800 duration-200'
-                        } px-3 py-2 text-lg font-courier`}
-                      >
-                        {t('Contact')}
-                      </a>
+                      ))}
                     </div>
                   </div>
 
@@ -154,6 +110,9 @@ export default function NavBar(props) {
                     >
                       <TfiFacebook className="text-3xl  border-black-2 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
                     </Link> */}
+                    <Link href={`/${router.locale}${currentPath}`}>
+                      <IoEarth />
+                    </Link>
                     <Link
                       href="https://www.instagram.com/senorita.photo/"
                       target="_blank"
@@ -168,50 +127,21 @@ export default function NavBar(props) {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 justify-center items-center flex-col pt-2 text-center bg-slate-100 absolute w-full ">
-              <Disclosure.Button
-                as="a"
-                href={`/${router.locale}`}
-                className={`${
-                  currentPath === '/' || currentPath === '/uk'
-                    ? 'bg-slate-600 text-white'
-                    : 'text-gray-300 hover:bg-slate-400 hover:text-white'
-                } block px-3 py-2 rounded-md text-slate-500 font-medium`}
-              >
-                {t('Home')}
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href={`/${router.locale}/Gallery`}
-                className={`${
-                  currentPath === '/Gallery' || currentPath === '/uk/Gallery'
-                    ? 'bg-slate-600 text-white'
-                    : 'text-gray-300 hover:bg-slate-400 hover:text-white'
-                } block px-3 py-2 rounded-md text-slate-500 font-medium`}
-              >
-                {t('Gallery')}
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href={`/${router.locale}/About`}
-                className={`${
-                  currentPath === '/About'
-                    ? 'bg-slate-600 text-white'
-                    : 'text-gray-300 hover:bg-slate-400 hover:text-white'
-                } block px-3 py-2 rounded-md text-slate-500 font-medium`}
-              >
-                {t('About Me')}
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href={`/${router.locale}/Contact`}
-                className={`${
-                  currentPath === '/Contact'
-                    ? 'bg-slate-600 text-white'
-                    : 'text-gray-300 hover:bg-slate-400 hover:text-white'
-                } block px-3 py-2 rounded-md text-slate-500 font-medium`}
-              >
-                {t('Contact')}
-              </Disclosure.Button>
+              {navigation.map((item) => (
+                <Disclosure.Button
+                  as="a"
+                  key={item.id}
+                  href={`/${router.locale}${item.href}`}
+                  className={`${
+                    currentPath === item.href ||
+                    currentPath === `/${router.locale}${item.href}`
+                      ? 'bg-slate-600 text-white'
+                      : 'text-gray-300 hover:bg-slate-400 hover:text-white'
+                  } block px-3 py-2 rounded-md text-slate-500 font-medium`}
+                >
+                  {t(item.key)}
+                </Disclosure.Button>
+              ))}
               <div className="flex w-full justify-center gap-2 py-4 border-y-2 lg:hidden">
                 <Link href="https://www.instagram.com/senorita.photo/">
                   <FaInstagram className="text-2xl fill-slate-600 border-black-2 hover:scale-125 duration-150 hover:fill-slate-900" />
