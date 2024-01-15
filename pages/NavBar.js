@@ -14,6 +14,7 @@ import { IoEarth } from 'react-icons/io5';
 // import { TfiInstagram, TfiFacebook } from 'react-icons/tfi';
 import { FaInstagram } from 'react-icons/fa6';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -38,8 +39,24 @@ export default function NavBar(props) {
 
   const router = useRouter();
 
+  const [locale, setLocale] = useState(router.locale);
+
   const currentPath = usePathname();
 
+  useEffect(() => {
+    setLocale(router.locale);
+  }, [router.locale]);
+
+  const toggleLocale = () => {
+    const newLocale = locale === 'en' ? 'uk' : 'en';
+    setLocale(newLocale);
+    console.log(locale);
+
+    // router.push(
+    //   `/${locale}`,
+    //   router.asPath.replace(`/${locale}`, `/${newLocale}`)
+    // );
+  };
   return (
     <Disclosure as="nav">
       {({ open }) => (
@@ -110,14 +127,18 @@ export default function NavBar(props) {
                     >
                       <TfiFacebook className="text-3xl  border-black-2 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
                     </Link> */}
-                    <Link href={`/${router.locale}${currentPath}`}>
-                      <IoEarth />
-                    </Link>
+                    <a
+                      onClick={toggleLocale}
+                      href={`/${locale}${router.asPath}`}
+                    >
+                      <IoEarth className="text-2xl hover:cursor-pointer hover:rotate-180 duration-500" />
+                    </a>
+
                     <Link
                       href="https://www.instagram.com/senorita.photo/"
                       target="_blank"
                     >
-                      <FaInstagram className="text-3xl hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" />
+                      <FaInstagram className="text-3xl hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 duration-300 focus:ring-inset focus:ring-white" />
                     </Link>
                   </div>
                 </div>
