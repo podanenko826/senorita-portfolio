@@ -27,7 +27,7 @@ export default function Contact() {
 
       <div className="flex flex-col items-center min-w-full py-20 bg-slate-700">
         <h1 className="py-20 uppercase text-6xl text-zinc-500 font-semibold">
-          Contact
+          {t('Contact')}
         </h1>
         {/* <h1 className="text-2xl text-slate-400 font-serif">
           Text me on Instagram

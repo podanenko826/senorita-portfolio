@@ -7,9 +7,9 @@ const ScrollToTopButton = () => {
 
   const toggleVisibility = () => {
     if (window.scrollY > 2000) {
-      setIsVisible(false);
-    } else {
       setIsVisible(true);
+    } else {
+      setIsVisible(false);
     }
   };
 
@@ -29,10 +29,14 @@ const ScrollToTopButton = () => {
   }, []);
 
   return (
-    <div className="flex flex-col fixed min-w-full items-end justify-end z-50">
+    <div
+      className={`scroll-to-top ${
+        isVisible ? '' : 'hidden'
+      } flex flex-col fixed min-w-full items-end justify-end z-50`}
+    >
       <button
         className={`scroll-to-top ${
-          isVisible ? 'hidden' : ''
+          isVisible ? '' : 'hidden'
         } m-14 text-2xl hover:scale-125 duration-300 bg-white p-1 rounded-full z-50`}
         onClick={scrollToTop}
       >
