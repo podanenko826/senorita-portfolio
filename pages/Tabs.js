@@ -66,7 +66,7 @@ export default function TabGroup({ photos, locale }) {
               </h1>
             </div>
 
-            <a className="pt-4 mb-20" href="/Gallery">
+            <a className="pt-4 mb-20" href={`/${router.locale}/Gallery`}>
               <span className="text-blue-500 border-b-2 border-blue-500 active:text-indigo-300 active:border-indigo-300 font-thin p-auto uppercase text-xl tracking-wider hover:-tracking-[-8px] hover:text-[19px] duration-300">
                 {t('Gallery >')}
               </span>
