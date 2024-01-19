@@ -45,7 +45,7 @@ export default function TabGroup({ photos, locale }) {
           <Tab.List className="pt-4">
             <Tab className="p-auto mb-14 uppercase text-xl" key={buttonKey}>
               <span
-                className="border-b-2 text-blue-500 border-blue-500 active:text-indigo-300 active:border-indigo-300 tracking-wider hover:-tracking-[-8px] hover:text-[19px] duration-300"
+                className="flex border-b-2 text-blue-500 border-blue-500 active:text-indigo-300 active:border-indigo-300 tracking-wider hover:-tracking-[-8px] hover:text-[19px] duration-300"
                 onClick={toggleShowMore}
               >
                 {buttonLabel}
