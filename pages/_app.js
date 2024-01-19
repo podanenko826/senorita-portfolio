@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import { Syne } from '@next/font/google';
 import { appWithTranslation } from 'next-i18next';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 import NavBar from './NavBar';
 import Header from './Header';
@@ -14,6 +15,7 @@ const syne = Syne({
 function App({ Component, pageProps }) {
   return (
     <div className={`${syne.variable} font-sans`}>
+      <ScrollToTopButton />
       <NavBar />
       <Header />
       <Component {...pageProps} />

@@ -1,7 +1,6 @@
 import Masonry from 'react-masonry-css';
 import Image from 'next/image';
 import LightGallery from 'lightgallery/react';
-import Like from './Like';
 import Head from 'next/head';
 
 import { useRouter } from 'next/router';
