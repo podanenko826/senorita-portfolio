@@ -73,6 +73,7 @@ const Footer = () => {
         <a
           href="https://twitter.com/denys_podanenko"
           target="_blank"
+          rel="noreferrer"
           className="flex"
         >
           <h3 className="font-semibold">{t('Denys Podanenko')}</h3>
