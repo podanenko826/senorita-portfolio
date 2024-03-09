@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 
 import { FaInstagram, FaFacebookF } from 'react-icons/fa6';
+import { FaHeart } from 'react-icons/fa6';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 import { IoEarth } from 'react-icons/io5';
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -63,15 +65,19 @@ const Footer = () => {
             'Copyright @ 2024 Anastasia Yalovets | All Rights Reserved | Lviv | Ukraine'
           )}
         </h3>
-
-        {/* <a
+      </div>
+      <div className="flex w-screen justify-center pt-2 pb-5 font-courier">
+        <h3>{t('Made with')}</h3>
+        <FaHeart className="pt-1 text-xl ml-2.5" />
+        <h3 className="mx-1.5">{t('by')}</h3>
+        <a
           href="https://twitter.com/denys_podanenko"
           target="_blank"
           className="flex"
         >
-          <h3 className="font-extrabold font-mono">Denys Podanenko</h3>
+          <h3 className="font-semibold">{t('Denys Podanenko')}</h3>
           <FaExternalLinkAlt className="mt-0.5 ml-1.5" />
-        </a> */}
+        </a>
       </div>
     </>
   );
