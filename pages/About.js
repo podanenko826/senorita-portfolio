@@ -32,7 +32,7 @@ export default function About() {
           <br />
           {t('With an extraordinary approach of filming and editing.')} <br />
           {t(
-            'From the first click of the shutter, she found her calling in such kind on art.'
+            'From the first click of the shutter, she found her calling in such kind of art.'
           )}{' '}
           <br />
           {t('Unveils the beauty that belongs to everyone,')} <br />

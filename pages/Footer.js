@@ -68,7 +68,7 @@ const Footer = () => {
       </div>
       <div className="flex w-screen justify-center pt-2 pb-5 font-courier">
         <h3>{t('Made with')}</h3>
-        <FaHeart className="pt-1 text-xl ml-2.5" />
+        <FaHeart className="pt-1 text-red-500 text-xl ml-2.5" />
         <h3 className="mx-1.5">{t('by')}</h3>
         <a
           href="https://twitter.com/denys_podanenko"
